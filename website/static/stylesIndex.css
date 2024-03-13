@@ -1,0 +1,37 @@
+.titleBox {
+    top:100px;
+    position: relative;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0) 50%);
+    margin-left: 5vw;
+    margin-bottom: 10vh;
+    border-radius: 30px;
+    width: 80vw;
+    padding: 1rem;
+}
+
+.contentBox {
+    top:100px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.40);
+    margin-left: 5vw;
+    margin-bottom: 10vh;
+    border-radius: 30px;
+    width: 80vw;
+    padding: 1rem;
+}
+
+.titleBox > h1 {
+    color: #10A4BD;
+    font-size: 10vw;
+    margin: 0;
+}
+
+.titleBox > h2 {
+    color: #B02BEF;
+    font-size: 10vw;
+    margin: 0;
+}
+
+.importent {
+    color: #10A4BD;
+}

@@ -23,6 +23,7 @@
 }
 
 .navbox {
+  z-index: 10;
   margin: 20px;
   display: flex;
 }
