@@ -1,21 +1,3 @@
-.navbar {
-  z-index: 1;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  margin: 0;
-  width: 100vw;
-  height: 90px;
-  display: flex;
-  justify-content: space-between;
-  background: linear-gradient(
-    rgba(10, 10, 10, 0.7) 0%,
-    rgba(255, 255, 255, 0) 80%
-  );
-  mix-blend-mode: multiply;
-}
-
 body {
   z-index: -100;
   position: fixed;
@@ -32,40 +14,4 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-.navtext {
-  position: relative;
-  z-index: 100;
-  color: #d2d2d2;
-}
-
-.navbox {
-  margin: 20px;
-  display: flex;
-}
-
-.navbox:hover {
-  cursor: pointer;
-}
-.navbox:hover p {
-  transition: transform 0.5s ease, color 0.5s ease;
-  transform: translateY(5px);
-  color: #ffff;
-}
-
-.navbox:hover img {
-  transition: transform 0.5s ease;
-  transform: translateY(5px);
-}
-
-.navlinks {
-  display: flex;
-  margin-right: 40px;
-}
-
-.logo {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 10px;
 }

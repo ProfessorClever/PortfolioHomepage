@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="../static/styles.css" />
+    {% block fimports %}{% endblock %} <!-- Block for imports in first child -->
+    {% block imports %}{% endblock %} <!-- Block for imports in page -->
+  </head>
+  <body>
+    {% block fcontents %}{% endblock %} <!-- Block for contents in first child -->
+    {% block contents %}{% endblock %} <!-- Block for contents in page -->
+  </body>
+</html>

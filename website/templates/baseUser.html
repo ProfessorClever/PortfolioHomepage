@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+{% block fimports %}
+<!-- import icon and css styles for navbar -->
+<link rel="icon" href="../static/Logo.png" type="png" />
+<link rel="stylesheet" href="../static/stylesNavbar.css" />
+<script src="../static/navbarScript.js"></script>
+{% endblock %} 
+
+{% block fcontents %}
+<!-- add navbar -->
+<div class="navbar">
+  <div class="navbox">
+    <img src="../static/Logo.png" alt="P-Clever Logo" class="logo" />
+    <p class="navtext">P-Clever</p>
+  </div>
+  <div class="navlinks">
+    <div class="navbox" id="about-me-link">
+      <p class="navtext">About Me</p>
+    </div>
+    <div class="navbox" id="projects-link">
+      <p class="navtext">Projects</p>
+    </div>
+    <div class="navbox" id="contact-link">
+      <p class="navtext">Contact</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
