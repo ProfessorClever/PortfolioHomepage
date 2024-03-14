@@ -4,7 +4,7 @@
     margin: 0;
     z-index: 1;
     overflow-y: scroll;
-    width: 100vw;
+    width: 99vw;
     height: 100vh;
     position: fixed;
 }
@@ -12,9 +12,10 @@
 .titleBox {
     top:100px;
     position: relative;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0) 50%);
+    
     margin-left: 5vw;
-    margin-bottom: 10vh;
+    margin-top: 15vh;
+    margin-bottom: 18vh;
     border-radius: 30px;
     width: 80vw;
 }
@@ -30,6 +31,7 @@
 }
 
 h2 {
+    font-family: Helvetica;
     margin-top: 0.5vh;
     margin-left: 1rem;
     margin-bottom: 0.5vh;
@@ -52,19 +54,21 @@ h2 {
 }
 
 .titleBox > h1 {
-    color: #10A4BD;
+    font-family: Inter;
+    color: #ffff;
     font-size: 10vw;
     margin: 0;
     margin-left: 1rem;
 }
 
 .titleBox > h2 {
-    color: #10A4BD;
+    font-family: Inter;
+    color: #ffff;
     font-size: 10vw;
     margin: 0;
     margin-left: 1rem;
 }
 
 .importent {
-    color: #B02BEF;
+    color: #7f51c7;
 }

@@ -10,8 +10,8 @@
   display: flex;
   justify-content: space-between;
   background: linear-gradient(
-    rgba(10, 10, 10, 0.8) 0%,
-    rgba(10, 10, 10, 0.4) 50%,
+    rgba(10, 10, 10, 0.9) 0%,
+    rgba(10, 10, 10, 0.4) 60%,
     rgba(10, 10, 10, 0)
   );
 }
@@ -22,20 +22,32 @@
   color: #d2d2d2;
 }
 
+h2.navtext {
+  margin: 1rem;
+}
+
 .navbox {
   z-index: 100;
   margin: 20px;
+  margin-top: 5px;
   display: flex;
 }
 
 .navbox:hover {
   cursor: pointer;
 }
+
 .navbox:hover p {
   transition: transform 0.5s ease, color 0.5s ease;
   transform: translateY(5px);
   color: #ffff;
 }
+.navbox:hover h2 {
+  transition: transform 0.5s ease, color 0.5s ease;
+  transform: translateY(5px);
+  color: #ffff;
+}
+
 
 .navbox:hover img {
   transition: transform 0.5s ease;
