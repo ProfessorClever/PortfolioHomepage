@@ -1,3 +1,14 @@
+.scrollableContent {
+    top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 1;
+    overflow-y: scroll;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
 .titleBox {
     top:100px;
     position: relative;
@@ -6,7 +17,27 @@
     margin-bottom: 10vh;
     border-radius: 30px;
     width: 80vw;
-    padding: 1rem;
+}
+
+.latestAndPopular {
+    display: flex;
+    width: 88%;
+}
+
+.latestAndPopular > div {
+    flex: 1;
+    padding: 0.5rem;
+}
+
+h2 {
+    margin-top: 0.5vh;
+    margin-left: 1rem;
+    margin-bottom: 0.5vh;
+    color: #d2d2d2
+}
+
+.latestAndPopular > div:hover > h2 {
+    color: #ffff
 }
 
 .contentBox {
@@ -24,14 +55,16 @@
     color: #10A4BD;
     font-size: 10vw;
     margin: 0;
+    margin-left: 1rem;
 }
 
 .titleBox > h2 {
-    color: #B02BEF;
+    color: #10A4BD;
     font-size: 10vw;
     margin: 0;
+    margin-left: 1rem;
 }
 
 .importent {
-    color: #10A4BD;
+    color: #B02BEF;
 }
