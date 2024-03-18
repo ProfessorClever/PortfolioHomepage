@@ -8,10 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="../static/parallaxScript.js"></script>
     {% block fimports %}{% endblock %} <!-- Block for imports in first child -->
     {% block imports %}{% endblock %} <!-- Block for imports in page -->
   </head>
   <body>
+    <div class="background">
+      <img src="../static/Stars.png" class="parallax1">
+      <img src="../static/Planet2.png" class="parallax2">
+    </div>
     {% block fcontents %}{% endblock %} <!-- Block for contents in first child -->
     {% block contents %}{% endblock %} <!-- Block for contents in page -->
   </body>
