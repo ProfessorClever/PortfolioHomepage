@@ -11,8 +11,7 @@
 
 .titleBox {
     top:100px;
-    position: relative;
-    
+    position: relative; 
     margin-left: 5vw;
     margin-top: 15vh;
     margin-bottom: 18vh;
@@ -20,17 +19,43 @@
     width: 80vw;
 }
 
-.latestAndPopular {
+.flexBox {
     display: flex;
     width: 88%;
 }
 
-.latestAndPopular > div {
+.flexBox > * {
     flex: 1;
     padding: 0.5rem;
 }
 
+.bigButton {
+    border-radius: 30px;
+    width: 20vw;
+    height: 50px;
+    font: 300;
+    font-size: 30px;
+    font-weight: 600;
+    border: hidden;
+    font-family: Helvetica;
+    background-color:rgba(0,0,0, 0.6);
+    color:#d2d2d2
+}
+
+.bigButton:hover {
+    background-color: #7f51c7;
+    cursor: pointer;
+}
+
+.buttonDiv {
+    margin-top: 20vh;
+    margin-left: 5vw;
+    margin-bottom: 10vh;
+    border-radius: 30px;
+}
+
 h2 {
+    font-size: 40px;
     font-family: Helvetica;
     margin-top: 0.5vh;
     margin-left: 1rem;

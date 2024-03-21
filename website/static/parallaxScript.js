@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let mouseX = e.clientX - window.innerWidth / 2;
         let mouseY = e.clientY - window.innerHeight / 2;
 
-        
-
         stars.style.transform = `translateX(${(mouseX / -16) - (window.innerWidth - window.innerWidth * zoomFactor)-window.innerWidth/3}px) translateY(${(mouseY / -16) - (window.innerHeight - window.innerHeight * zoomFactor)-window.innerHeight/3}px)`;
         planet.style.transform = `translateX(${mouseX / 8}px) translateY(${mouseY / 8}px)`;
     });
