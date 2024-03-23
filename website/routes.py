@@ -9,6 +9,10 @@ def landingPage():
 def projectsPage():
     return render_template("projects.html")
 
+@app.route("/Projects/<projectID>")
+def projectPage(projectID):
+    return render_template("project.html", projectID = projectID)
+
 @app.route("/AboutMe")
 def abouteMePage():
     return render_template("aboutMe.html")
