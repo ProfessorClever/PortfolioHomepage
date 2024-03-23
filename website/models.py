@@ -3,7 +3,6 @@ from website import db
 class Image(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
-    
     filename = db.Column(db.String, nullable=False, unique=True)
 
 class Text(db.Model):
