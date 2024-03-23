@@ -18,5 +18,5 @@ class Project(db.Model):
 
 class ProjectElement(db.Model):
     project_id = db.Column(db.Integer, db.ForeignKey("project.id"), primary_key=True)
-    element_id = db.Column(db.Integer, db.ForeignKey("project.id"), primary_key=True)
+    element_id = db.Column(db.Integer, primary_key=True)
     position = db.Column(db.Integer)
