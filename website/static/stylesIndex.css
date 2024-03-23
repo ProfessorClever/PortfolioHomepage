@@ -57,13 +57,13 @@
 h2 {
     font-size: 40px;
     font-family: Helvetica;
-    margin-top: 0.5vh;
+    margin: 0;
     margin-left: 1rem;
     margin-bottom: 0.5vh;
     color: #d2d2d2
 }
 
-.latestAndPopular > div:hover > h2 {
+.flexBox > div:hover > h2 {
     color: #ffff
 }
 

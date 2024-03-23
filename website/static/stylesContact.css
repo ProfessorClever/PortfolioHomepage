@@ -1,0 +1,30 @@
+.line {
+    display: flex;
+}
+
+.contactBox {
+    color: #d2d2d2;
+    background: rgba(0, 0, 0, 0.40);
+    margin-top:20vh;
+    margin-left:10vw;
+    margin-right:10vw;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.contactBox > h1 {
+    color: #7f51c7;
+    font-size: 8vw;
+    margin: 20px;
+}
+
+.line > h2 {
+    font-size: 3vw;
+    margin-left: 20px;
+    flex: 1;
+}
+
+.line > p {
+    font-size: 3vw;
+    flex: 1;
+}
