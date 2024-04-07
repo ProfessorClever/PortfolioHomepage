@@ -37,23 +37,9 @@
     font-size: 30px;
     font-weight: 600;
     font-family: Helvetica;
-    background-image:rgba(0,0,0, 0.6);
+    background-color:rgba(0,0,0, 0.6);
     color:#d2d2d2;
-    border-width: 5px;
-    border-image: linear-gradient(0deg, rgba(0,0,0,0.6),rgba(0,0,0,0.6),white,rgba(0,0,0,0.6),rgba(0,0,0,0.6));
-    animation: swipeBG 1s linear infinite;
-}
-
-@keyframes swipeBG {
-    0% {
-        border-image: linear-gradient(0deg, rgba(0,0,0,0.6),rgba(0,0,0,0.6),white,rgba(0,0,0,0.6),rgba(0,0,0,0.6));
-    }
-    50% {
-        border-image: linear-gradient(90deg, rgba(0,0,0,0.6),rgba(0,0,0,0.6),white,rgba(0,0,0,0.6),rgba(0,0,0,0.6));
-    }
-    100% {
-        border-image: linear-gradient(180deg, rgba(0,0,0,0.6),rgba(0,0,0,0.6),white,rgba(0,0,0,0.6),rgba(0,0,0,0.6));
-    }
+    border: hidden;
 }
 
 .bigButton:hover {
