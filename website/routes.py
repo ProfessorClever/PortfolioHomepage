@@ -11,7 +11,7 @@ def projectsPage():
 
 @app.route("/Projects/<projectID>")
 def projectPage(projectID):
-    return render_template("project.html", projectID = projectID)
+    return render_template("project.html", projectID)
 
 @app.route("/AboutMe")
 def abouteMePage():
