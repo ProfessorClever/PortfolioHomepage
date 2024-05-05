@@ -20,3 +20,7 @@ def abouteMePage():
 @app.route("/Contact")
 def contactPage():
     return render_template("contact.html")
+
+@app.route("/Admin")
+def adminPage():
+    return render_template("adminIndex.html")

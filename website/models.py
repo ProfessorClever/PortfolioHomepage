@@ -10,11 +10,12 @@ class Image(db.Model):
 class Text(db.Model):
     id: Mapped[int] = mapped_column(primary_key= True)
     text: Mapped[str]
-    textType: Mapped[int] = mapped_column(nullable= False)
+    textType: Mapped[int] = mapped_column(nullable= False) # Enum for different types (1 = normal, 2 = code, ...)
  
 class Project(db.Model):
     id: Mapped[int] = mapped_column(primary_key= True)
     discription: Mapped[str]
+    projectType: Mapped[int] = mapped_column(nullable= False) # Enum for different types (1 = programming, 2 = art, ...)
 
 project_element_m2m = db.Table(
     "project_element",
