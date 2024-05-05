@@ -1,5 +1,6 @@
 from website import db
 from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy import DateTime
 import sqlalchemy as sa
 
 class Image(db.Model):
@@ -15,6 +16,7 @@ class Text(db.Model):
 class Project(db.Model):
     id: Mapped[int] = mapped_column(primary_key= True)
     discription: Mapped[str]
+    date: Mapped[DateTime] = mapped_column(nullable= False)
     projectType: Mapped[int] = mapped_column(nullable= False) # Enum for different types (1 = programming, 2 = art, ...)
 
 project_element_m2m = db.Table(

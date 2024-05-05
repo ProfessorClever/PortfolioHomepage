@@ -1,5 +1,6 @@
 from flask import render_template
-from website import app
+from website import app, db
+from website.models import *
 
 @app.route("/")
 def landingPage():
@@ -7,11 +8,13 @@ def landingPage():
 
 @app.route("/Projects")
 def projectsPage():
-    return render_template("projects.html")
+    projects = db.session.execute(db.select(Project).order_by(Project.date)).scalars()
+    return render_template("projects.html", projects)
 
 @app.route("/Projects/<projectID>")
 def projectPage(projectID):
-    return render_template("project.html", projectID)
+    db.get_or_404(Project, projectID)
+    return render_template("project.html", Project)
 
 @app.route("/AboutMe")
 def abouteMePage():
