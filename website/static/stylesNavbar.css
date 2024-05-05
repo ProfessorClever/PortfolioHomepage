@@ -20,11 +20,13 @@
   position: relative;
   z-index: 100;
   color: #d2d2d2;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h2.navtext {
   margin: 1rem;
   font-size: x-large;
+  
 }
 
 .navbox {
@@ -64,4 +66,41 @@ h2.navtext {
   width: 60px;
   height: 60px;
   margin-bottom: 10px;
+}
+
+#menu-button {
+  display: none;
+}
+
+@media screen and (max-width: 660px) {
+  #menu-button {
+    display: flex;
+  }
+
+  .navlinks {
+    margin-right: 15px;
+  }
+
+  .navtext {
+    width: auto;
+  }
+
+  .navlinks .navbox {
+    display: none;
+  }
+
+  .navtext {
+    background-color: black;
+    border-radius: 30%;
+    box-shadow: 0 0 10px 5px black;
+    text-align: center;
+  }
+
+  .navlinks.active {
+    display: block;
+  }
+
+  .navlinks.active .navbox {
+    display: block;
+  }
 }

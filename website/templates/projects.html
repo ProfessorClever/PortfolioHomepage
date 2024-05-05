@@ -7,5 +7,15 @@
 
 {% block contents %}
 <div class="scrollableContent">
+    {% for project in projects %}
+    <div class="projectDiv">
+        <h2 class="projectTitle">
+            {% project.title %}
+        </h2>
+        <p>
+            {% project.discripton %}
+        </p>
+    </div>
+    {% end for %}
 </div>
 {% endblock %}

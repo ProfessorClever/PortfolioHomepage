@@ -5,6 +5,9 @@
 {% block imports %}
 <link rel="stylesheet" href="../static/stylesIndex.css">
 <script src="../static/indexScript.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block contents %}
@@ -13,9 +16,14 @@
         <h2>Hi,</h2>
         <h1>I am <span class="importent">Marco</span></h1>
     </div>
+    <div class="floatingText">
+        <p id="p1">I write code</p>
+        <p id="p2">I do art</p>
+        <p id="p3">I create</p>
+    </div>
     <div class="flexBox">
         <div class="buttonDiv">
-            <button class="bigButton" id="knowMeButton">Know Me</button>
+            <button class="bigButton" id="knowMeButton">Tell Me More</button>
         </div>
         <div class="buttonDiv">
         <button class="bigButton" id="showProjectsButton">Show Projects</button>

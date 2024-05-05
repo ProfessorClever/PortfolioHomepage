@@ -1,21 +1,23 @@
 from website import db
+from sqlalchemy.orm import Mapped, mapped_column
+import sqlalchemy as sa
 
 class Image(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    filename = db.Column(db.String, nullable=False, unique=True)
+    id: Mapped[int] = mapped_column(primary_key= True)
+    name: Mapped[str]
+    filename: Mapped[str] = mapped_column(nullable= False, unique= True)
 
 class Text(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    text = db.Column(db.String)
-    textType = db.Column(db.String)
-
+    id: Mapped[int] = mapped_column(primary_key= True)
+    text: Mapped[str]
+    textType: Mapped[int] = mapped_column(nullable= False)
+ 
 class Project(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String, unique=True)
-    discription = db.Column(db.String)
+    id: Mapped[int] = mapped_column(primary_key= True)
+    discription: Mapped[str]
 
-class ProjectElement(db.Model):
-    project_id = db.Column(db.Integer, db.ForeignKey("project.id"), primary_key=True)
-    element_id = db.Column(db.Integer, primary_key=True)
-    position = db.Column(db.Integer)
+project_element_m2m = db.Table(
+    "project_element",
+    sa.Column("project_id", sa.ForeignKey(Project.id), primary_key=True),
+    sa.Column("element_id", primary_key=True),
+)

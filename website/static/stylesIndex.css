@@ -19,6 +19,34 @@
     width: 80vw;
 }
 
+.floatingText {
+    margin-left: 7vw;
+    margin-top: 30vh;
+}
+
+.floatingText p {
+    color: #d2d2d2;
+    font-family: Source Code Pro;
+    font-size: 5vw;
+    font-weight: 400;
+    text-decoration: underline;
+    background-color:rgba(0,0,0, 0.6);
+    box-shadow: 0 0 10px 10px rgba(0,0,0, 0.8);
+    width: fit-content;
+}
+
+#p1 {
+    animation: slideInFromLeft 2s ease forwards;
+}
+
+#p2 {
+    animation: slideInFromLeft 2.5s ease forwards;
+}
+
+#p3 {
+    animation: slideInFromLeft 3s ease forwards;
+}
+
 .flexBox {
     display: flex;
     width: 88%;
@@ -31,7 +59,7 @@
 
 .bigButton {
     border-radius: 30px;
-    width: 20vw;
+    width: 30vw;
     height: 50px;
     font: 300;
     font-size: 30px;
@@ -52,7 +80,6 @@
     margin-left: 5vw;
     margin-bottom: 10vh;
     border-radius: 30px;
-    
 }
 
 h2 {
@@ -110,4 +137,19 @@ h2 {
 
 .importent {
     color: #7f51c7;
+}
+
+@media screen and (max-width: 768px) {
+
+    .flexBox {
+        display: block;
+    }
+
+    .buttonDiv {
+        margin-left: 22vw;
+    }
+
+    .bigButton {
+        width: 50vw;
+    }
 }
