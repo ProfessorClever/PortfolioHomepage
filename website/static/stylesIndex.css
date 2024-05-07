@@ -30,7 +30,7 @@
     font-size: 5vw;
     font-weight: 400;
     text-decoration: underline;
-    background-color:rgba(0,0,0, 0.6);
+    background-color:rgba(0,0,0, 0.8);
     box-shadow: 0 0 10px 10px rgba(0,0,0, 0.8);
     width: fit-content;
 }
@@ -82,13 +82,14 @@
     border-radius: 30px;
 }
 
-h2 {
+.flexBox h2 {
     font-size: 40px;
     font-family: Helvetica;
     margin: 0;
     margin-left: 1rem;
     margin-bottom: 0.5vh;
-    color: #d2d2d2
+    color: #d2d2d2;
+    transform: translateY(-0.5rem)
 }
 
 .flexBox > div:hover > h2 {

@@ -9,12 +9,12 @@ def landingPage():
 @app.route("/Projects")
 def projectsPage():
     projects = db.session.execute(db.select(Project).order_by(Project.date)).scalars()
-    return render_template("projects.html", projects)
+    return render_template("projects.html", projects = projects)
 
 @app.route("/Projects/<projectID>")
 def projectPage(projectID):
     db.get_or_404(Project, projectID)
-    return render_template("project.html", Project)
+    return render_template("project.html", project = Project)
 
 @app.route("/AboutMe")
 def abouteMePage():
@@ -27,3 +27,7 @@ def contactPage():
 @app.route("/Admin")
 def adminPage():
     return render_template("adminIndex.html")
+
+@app.errorhandler(404)
+def notFoundPage(e):
+    return render_template("404.html")

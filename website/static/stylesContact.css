@@ -29,4 +29,6 @@
     font-size: 3vw;
     margin: 0;
     margin-bottom: 5vh;
+    width: fit-content;
+    background-color: rgba(0,0,0,0.5);
 }

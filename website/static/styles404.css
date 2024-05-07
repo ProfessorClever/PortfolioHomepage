@@ -1,0 +1,20 @@
+.messageDiv {
+    width: 80vw;
+    margin: 0;
+    margin-left: 7vw;
+    margin-top: 30vh;
+}
+
+.messageDiv h1 {
+    font-size: 25vh;
+    font-family: Inter;
+    color: #7f51c7;
+    margin: 0;
+}
+
+.messageDiv p {
+    font-size: 5vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #d2d2d2;
+    margin: 0;
+}
