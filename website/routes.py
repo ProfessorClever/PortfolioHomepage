@@ -13,8 +13,8 @@ def projectsPage():
 
 @app.route("/Projects/<projectID>")
 def projectPage(projectID):
-    db.get_or_404(Project, projectID)
-    return render_template("project.html", project = Project)
+    project = db.get_or_404(Project, projectID)
+    return render_template("project.html", project = project)
 
 @app.route("/AboutMe")
 def abouteMePage():
@@ -27,6 +27,23 @@ def contactPage():
 @app.route("/Admin")
 def adminPage():
     return render_template("adminIndex.html")
+
+@app.route("/editProjects")
+def editProjectsPage():
+    return render_template("editProjects.html")
+
+@app.route("/editProjects/<projectID>")
+def editProjectPage(projectID):
+    project = db.get_or_404(Project, projectID)
+    return render_template("editProject.html", project = project)
+
+@app.route("/editMe")
+def editMePage():
+    return render_template("editMe.html")
+
+@app.route("/editContact")
+def editContactPage():
+    return render_template("editContact.html")
 
 @app.errorhandler(404)
 def notFoundPage(e):

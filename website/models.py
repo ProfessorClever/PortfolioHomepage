@@ -19,6 +19,13 @@ class Project(db.Model):
     date: Mapped[datetime] = mapped_column(nullable= False)
     projectType: Mapped[int] = mapped_column(nullable= False) # Enum for different types (1 = programming, 2 = art, ...)
 
+class Me(db.Model):
+    id: Mapped[int] = mapped_column(primary_key=True)
+    discription: Mapped[str]
+    picture_id: Mapped[int] = mapped_column(sa.ForeignKey(Image.id))
+    email: Mapped[str] = mapped_column(nullable= False)
+    mobile: Mapped[str] = mapped_column(nullable= False)
+
 project_element_m2m = db.Table(
     "project_element",
     sa.Column("project_id", sa.ForeignKey(Project.id), primary_key=True),
