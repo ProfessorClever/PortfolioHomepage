@@ -28,20 +28,20 @@ def contactPage():
 def adminPage():
     return render_template("adminIndex.html")
 
-@app.route("/editProjects")
+@app.route("/EditProjects")
 def editProjectsPage():
     return render_template("editProjects.html")
 
-@app.route("/editProjects/<projectID>")
+@app.route("/EditProjects/<projectID>")
 def editProjectPage(projectID):
     project = db.get_or_404(Project, projectID)
     return render_template("editProject.html", project = project)
 
-@app.route("/editMe")
+@app.route("/EditMe")
 def editMePage():
     return render_template("editMe.html")
 
-@app.route("/editContact")
+@app.route("/EditContact")
 def editContactPage():
     return render_template("editContact.html")
 

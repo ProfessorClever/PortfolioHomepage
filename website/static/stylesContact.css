@@ -14,6 +14,8 @@
     border-radius: 30px;
 }
 
+
+
 .contactBox > h1 {
     color: #7f51c7;
     font-size: 8vw;
@@ -31,4 +33,19 @@
     margin-bottom: 5vh;
     width: fit-content;
     background-color: rgba(0,0,0,0.5);
+}
+
+@media screen and (max-width: 768px) {
+
+    .line > h2 {
+        font-size: 6vw;
+    }
+
+    .line > p {
+        font-size: 5vw;
+    }
+
+    .contactBox > h1 {
+        font-size: 10vw;
+    }
 }

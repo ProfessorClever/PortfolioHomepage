@@ -1,9 +1,41 @@
 {% extends 'baseAdmin.html'%}
 
-{% block title %}Manage Site{% endblock %}
+{% block title %}Edit Projects{% endblock %}
 
 {% block imports %}
 {% endblock %}
 
 {% block content %}
+<div class="contolbar">
+    <button>Create new Project</button>
+</div>
+<div class="newProject">
+    <h2>Create new Project</h2>
+    <form id="" method="POST">
+        <label>Name</label>
+        <input name="project_name" type="text" placeholder="Enter name">
+        <label>Discriptoion</label>
+        <input name="project_discription" value="" placeholder="Enter discription">
+    </form>
+</div>
+<div class="scrollableContent">
+    {% if projects != None %}
+        {% for project in projects %}
+        <div class="projectSlot">
+            <div class="editDiv">
+                <button>Open</button>
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+            <div class="projectDiv">
+                <h2 class="projectTitle">
+                    {{ project.title }}
+                </h2>
+                <p>{{ project.discripton }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div> 
+
 {% endblock %}
