@@ -3,38 +3,58 @@
 {% block title %}Edit Projects{% endblock %}
 
 {% block imports %}
+<link rel="stylesheet" href="../static/stylesEditProjects.css" />
+<script src="../static/editProjectsScript.js"></script>
 {% endblock %}
 
-{% block content %}
-<div class="contolbar">
-    <button>Create new Project</button>
+{% block contents %}
+<div class="controlbar">
+    <button id="createNewProject">+ Create new Project</button>
 </div>
-<div class="newProject">
+<div id="newProject">
     <h2>Create new Project</h2>
     <form id="" method="POST">
-        <label>Name</label>
-        <input name="project_name" type="text" placeholder="Enter name">
-        <label>Discriptoion</label>
+        <div class="form-row">
+            <label>Name</label>
+            <input name="project_name" type="text" placeholder="Enter name">
+        </div>
+        <div class="form-row">
+        <label>Discription</label>
         <input name="project_discription" value="" placeholder="Enter discription">
+        </div>
     </form>
+    <button id="createProject">create</button>
+    <button id="createAbort">abort</button>
+</div>
+<div id="deleteProject">
+    <h2>Delete Project</h2>
+    <p id="deleteProjectName"></p>
+    <p id="deleteProjectId"></p>
+    <p>How do you want to delete this project?</p>
+    <button id="deleteProjectandContents">Delete project and contents</button>
+    <button id="deleteProject">Only delete project</button>
+    <button id="deleteAbort">Abort deletion</button>
 </div>
 <div class="scrollableContent">
     {% if projects != None %}
         {% for project in projects %}
         <div class="projectSlot">
             <div class="editDiv">
-                <button>Open</button>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button class="openProjectButton" projectId={{ project.id }}>Open</button>
+                <button class="editProjectButton" projectId={{ project.id }}>Edit</button>
+                <button class="deleteProjectButton" projectId={{ project.id }}>Delete</button>
             </div>
             <div class="projectDiv">
                 <h2 class="projectTitle">
                     {{ project.title }}
                 </h2>
-                <p>{{ project.discripton }}</p>
+                <p class="projectDiscription">{{ project.discripton }}</p>
+                <p class="projectId">{{ project.id }}</p>
             </div>
         </div>
         {% endfor %}
+    {% else %}
+        <h2>No Projects Found</h2>
     {% endif %}
 </div> 
 

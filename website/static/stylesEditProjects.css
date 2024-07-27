@@ -1,0 +1,73 @@
+.controlbar {
+    width: 100%;
+    display: flex;
+    margin-top: 100px;
+}
+
+button {
+    height: fit-content;
+    width: fit-content;
+    padding: 3vh;
+    border-radius: 30px;
+    font-size: larger;
+}
+
+#newProject {
+    width: 40%;
+    display: none;
+    color: white;
+    margin-left: 20px;
+}
+
+.form-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#newProject form {
+    display: flex;
+    flex-direction: column;
+}
+
+#newProject input {
+    width: 60%;
+}
+
+#deleteProject {
+    display: none;
+    color: white;
+}
+
+.scrollableContent {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+.projectSlot {
+    width: 80%;
+    border-radius: 30%;
+    background-color:rgba(0,0,0, 0.6);
+    display: flex;
+}
+
+.editDiv {
+    flex: 1;
+    justify-content: center;
+}
+
+.editDiv button {
+    height: fit-content;
+    width: 90%;
+    font-family: Inter;
+    font-size: medium;
+}
+
+.projcetDiv {
+    flex: 3;
+}
