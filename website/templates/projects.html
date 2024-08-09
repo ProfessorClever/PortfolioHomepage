@@ -11,7 +11,7 @@
             div.addEventListener('click', (event) => {
                 const clickedDiv = event.currentTarget;
                 if (clickedDiv.querySelector('.projectID')) {
-                    window.location.assign('Project/'+clickedDiv.querySelector('.projectID').innerText);
+                    window.location.assign('Projects/'+clickedDiv.querySelector('.projectID').innerText);
                 } else {
                     console.error('Title element not found');
                 }

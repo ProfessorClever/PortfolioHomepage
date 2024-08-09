@@ -16,7 +16,7 @@ def projectsPage():
 
 @app.route("/Projects/<projectID>")
 def projectPage(projectID):
-    project = db.get_or_404(Project, projectID)
+    project = db.get_or_404(Project, int(projectID))
     return render_template("project.html", project = project)
 
 @app.route("/AboutMe")
@@ -39,7 +39,7 @@ def editProjectsPage():
 
 @app.route("/EditProjects/<projectID>")
 def editProjectPage(projectID):
-    project = db.get_or_404(Project, projectID)
+    project = db.get_or_404(Project, int(projectID))
     return render_template("editProject.html", project = project)
 
 @app.route("/EditMe")
