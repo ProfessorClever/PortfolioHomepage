@@ -1,33 +1,46 @@
 from website import db
-from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 from datetime import datetime
 import sqlalchemy as sa
 
-class Image(db.Model):
-    id: Mapped[int] = mapped_column(primary_key= True)
-    name: Mapped[str]
-    filename: Mapped[str] = mapped_column(nullable= False, unique= True)
+metadata = sa.MetaData()
+class Base(DeclarativeBase):
+    pass
 
-class Text(db.Model):
-    id: Mapped[int] = mapped_column(primary_key= True)
-    text: Mapped[str]
-    textType: Mapped[int] = mapped_column(nullable= False) # Enum for different types (1 = normal, 2 = code, ...)
- 
-class Project(db.Model):
-    id: Mapped[int] = mapped_column(primary_key= True)
-    discription: Mapped[str]
-    date: Mapped[datetime] = mapped_column(nullable= False)
-    projectType: Mapped[int] = mapped_column(nullable= False) # Enum for different types (1 = programming, 2 = art, ...)
-
-class Me(db.Model):
-    id: Mapped[int] = mapped_column(primary_key=True)
-    discription: Mapped[str]
-    picture_id: Mapped[int] = mapped_column(sa.ForeignKey(Image.id))
-    email: Mapped[str] = mapped_column(nullable= False)
-    mobile: Mapped[str] = mapped_column(nullable= False)
-
-project_element_m2m = db.Table(
-    "project_element",
-    sa.Column("project_id", sa.ForeignKey(Project.id), primary_key=True),
-    sa.Column("element_id", sa.Integer, primary_key=True),
+project_element = sa.Table(
+    'project_element',
+    metadata,
+    sa.Column('project_id', sa.Integer, sa.ForeignKey('projects.id'), primary_key=True),
+    sa.Column('element_id', sa.Integer, sa.ForeignKey('elements.id'), primary_key=True),
+    sa.Column('prio', sa.Integer, nullable=False)
 )
+
+class Project(Base):
+    __tablename__ = 'projects'
+    id: Mapped[int] = mapped_column(sa.Integer, primary_key=True, autoincrement=True)
+    name: Mapped[str] = mapped_column(sa.String, nullable=False)
+    discription: Mapped[str] = mapped_column(sa.String, nullable=False)
+    begin: Mapped[datetime] = mapped_column(datetime, default=sa.func.now(), nullable=False)
+    elements: Mapped[list['Element']] = relationship(
+        secondary='project_element',
+        back_populates='projects',
+        order_by='ProjectElement.prio'
+    )
+
+class Element(Base):
+    __tablename__ = 'elements'
+    id: Mapped[int] = mapped_column(sa.Integer, primary_key=True, autoincrement=True)
+    text: Mapped[str] = mapped_column(sa.String, nullable=False)
+    image_id: Mapped[int] = mapped_column(sa.ForeignKey('images.id'), nullable=True)
+    html: Mapped[str] = mapped_column(nullable=True)
+    projects: Mapped[list[Project]] = relationship(
+        secondary='project_element',
+        back_populates='elements'
+    )
+
+class Image(Base):
+    __tablename__ = 'images'
+    id: Mapped[int] = mapped_column(sa.Integer, primary_key= True, autoincrement=True)
+    name: Mapped[str] = mapped_column(sa.String, nullable=False)
+    data:Mapped[bytes] = mapped_column(sa.LargeBinary, nullable=False)
+    mime_type: Mapped[str] = mapped_column(sa.String, nullable=False)
