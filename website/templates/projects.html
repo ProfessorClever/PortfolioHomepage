@@ -3,19 +3,33 @@
 {% block title %} P-Clever's Projects {% endblock %}
 
 {% block imports %}
+<link rel="stylesheet" href="../static/stylesProjects.css" />
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        Array.from(document.getElementsByClassName("projectDiv")).forEach((div) => {
+            console.log("ha");
+            div.addEventListener('click', (event) => {
+                const clickedDiv = event.currentTarget;
+                if (clickedDiv.querySelector('.projectID')) {
+                    window.location.assign('Project/'+clickedDiv.querySelector('.projectID').innerText);
+                } else {
+                    console.error('Title element not found');
+                }
+            });
+        });
+    });
+</script>
 {% endblock %}
 
 {% block contents %}
 <div class="scrollableContent">
+    <div class="nav-distance"></div>
     {% if projects != None %}
         {% for project in projects %}
         <div class="projectDiv">
-            <h2 class="projectTitle">
-                {{ project.title }}
-            </h2>
-            <p>
-                {{ project.discripton }}
-            </p>
+            <p class="projectID">{{ project.id }}</p>
+            <h2 class="projectTitle">{{ project.name }}</h2>
+            <p class="projectDescription">{{ project.description }}</p>
         </div>
         {% endfor %}
     {% endif %}

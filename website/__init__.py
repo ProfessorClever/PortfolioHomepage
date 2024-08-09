@@ -11,4 +11,4 @@ app.config.from_object('config')
 db = SQLAlchemy()
 db.init_app(app)
 
-from website import routes
+from website import routes, models

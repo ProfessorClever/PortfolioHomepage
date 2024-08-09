@@ -1,6 +1,9 @@
-from flask import render_template
+from flask import render_template, request
 from website import app, db
 from website.models import *
+from werkzeug.utils import secure_filename
+
+#   --- User Sides ---
 
 @app.route("/")
 def landingPage():
@@ -8,7 +11,7 @@ def landingPage():
 
 @app.route("/Projects")
 def projectsPage():
-    projects = db.session.execute(db.select(Project).order_by(Project.date)).scalars()
+    projects = db.session.execute(db.select(Project).order_by(Project.begin)).scalars()
     return render_template("projects.html", projects = projects)
 
 @app.route("/Projects/<projectID>")
@@ -23,6 +26,8 @@ def abouteMePage():
 @app.route("/Contact")
 def contactPage():
     return render_template("contact.html")
+
+#   --- Admin Sides ---
 
 @app.route("/Admin")
 def adminPage():
@@ -44,6 +49,31 @@ def editMePage():
 @app.route("/EditContact")
 def editContactPage():
     return render_template("editContact.html")
+
+#   --- DB Api ---
+
+@app.route("/api/createProject", methods=['POST'])
+def createProject():
+    name = request.form.get('project_name')
+    description = request.form.get('project_description')
+    picture_id = request.form.get('projcet_picture')
+
+    print(description)
+
+    if name and description:
+        project = Project(name = name, description = description, image = picture_id)
+        db.session.add(project)
+        db.session.commit()
+        print("[API]: The project '"+name+"' was created and added to the database")
+        return 'Project has been created', 200
+    elif not name:
+        print("[API]: Error while creating a new project")
+        return 'No name recived', 400
+    else:
+        print("[API]: Error while creating a new project")
+        return 'No Discription recived', 400
+
+
 
 @app.errorhandler(404)
 def notFoundPage(e):

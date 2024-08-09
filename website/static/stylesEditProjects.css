@@ -39,6 +39,14 @@ button:hover {
     width: 60%;
 }
 
+#newProject input.sub_btn {
+    height: fit-content;
+    width: fit-content;
+    padding: 3vh;
+    border-radius: 30px;
+    font-size: larger;
+}
+
 #deleteProject {
     display: none;
     color: white;

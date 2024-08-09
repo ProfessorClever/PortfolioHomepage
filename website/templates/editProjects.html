@@ -13,18 +13,27 @@
 </div>
 <div id="newProject">
     <h2>Create new Project</h2>
-    <form id="" method="POST">
+    <form action="http://localhost:5000/api/createProject" method="POST">
         <div class="form-row">
             <label>Name</label>
-            <input name="project_name" type="text" placeholder="Enter name">
+            <input name="project_name" type="text" value="" placeholder="Enter name">
         </div>
         <div class="form-row">
-        <label>Discription</label>
-        <input name="project_discription" value="" placeholder="Enter discription">
+            <label>Description</label>
+            <input name="project_description" type="text" value="" placeholder="Enter discription">
+        </div>
+        <div class="form-row">
+            <label>Picture</label>
+            <input name="project_picture" type="number" value="" placeholder="Enter Picture ID">
+        </div>
+        <div class="form-row">
+            <div>
+                <input class="sub_btn" type="submit" value="create">
+                <button id="createAbort">abort</button>
+            </div>
         </div>
     </form>
-    <button id="createProject">create</button>
-    <button id="createAbort">abort</button>
+    
 </div>
 <div id="deleteProject">
     <h2>Delete Project</h2>
