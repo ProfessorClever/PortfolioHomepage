@@ -12,6 +12,10 @@ button {
     font-size: larger;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 #newProject {
     width: 40%;
     display: none;
