@@ -7,7 +7,17 @@ from werkzeug.utils import secure_filename
 
 @app.route("/")
 def landingPage():
-    return render_template("index.html")
+    latestProject = Project.query.order_by(db.desc(Project.begin)).first()
+    popularProject = Project.query.order_by(db.desc(Project.views)).first()
+
+    if latestProject and popularProject:
+        return render_template("index.html", latest = latestProject, popular = popularProject)
+    elif not latestProject:
+        return render_template("index.html", latest=None, popular = popularProject)
+    elif not popularProject:
+        return render_template("index.html", latest=latestProject, popularProject=None)
+    else:
+        return render_template("index.html", latest=None, popular=None)
 
 @app.route("/Projects")
 def projectsPage():
@@ -17,6 +27,9 @@ def projectsPage():
 @app.route("/Projects/<projectID>")
 def projectPage(projectID):
     project = db.get_or_404(Project, int(projectID))
+    if project:
+        project.views += 1
+        db.session.commit()
     return render_template("project.html", project = project)
 
 @app.route("/AboutMe")
@@ -92,7 +105,7 @@ def editContact():
         contact.phone = phone
 
         db.session.commit()
-        
+
         message='Contact was successfully updated'
         print("[API]: "+message)
         return message, 200

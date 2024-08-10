@@ -17,6 +17,7 @@ class Project(db.Model):
     image = db.Column(db.Integer, db.ForeignKey('images.id'), nullable=True)
     description = db.Column(db.String, nullable=False)
     begin = db.Column(db.DateTime, default=db.func.now(), nullable=False)
+    views = db.Column(db.Integer, default=0)
     elements = relationship(
         'Element',
         secondary=project_element,
