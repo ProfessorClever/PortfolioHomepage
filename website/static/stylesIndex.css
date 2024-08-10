@@ -96,6 +96,10 @@
     color: #ffff
 }
 
+.flexBox > div:hover {
+    cursor: pointer;
+}
+
 .contentBox {
     top:100px;
     position: relative;
