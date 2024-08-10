@@ -25,8 +25,8 @@ def abouteMePage():
 
 @app.route("/Contact")
 def contactPage():
-    me = Me.query.first_or_404()
-    return render_template("contact.html", name = me.name, email = me.email, phone = me.phone)
+    contact = Contact.query.first_or_404()
+    return render_template("contact.html", name = contact.name, email = contact.email, phone = contact.phone)
 
 #   --- Admin Sides ---
 
