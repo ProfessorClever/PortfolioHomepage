@@ -3,13 +3,25 @@
 {% block title %}Manage Site{% endblock %}
 
 {% block imports %}
+<link rel="stylesheet" href="../static/stylesForms.css" />
 {% endblock %}
 
 {% block contents %}
-<form>
-    <div class="form-row">
-        <label>Name</label>
-        <input name="project_name" type="text" value="" placeholder="Enter name">
-    </div>
-</form>
+<div class="form-box">
+    <form action="http://localhost:5000/api/editContact" method="POST" class="nav-distance">
+        <div class="form-row">
+            <label>Name</label>
+            <input name="contact_name" type="text" value="" placeholder={{ name }}>
+        </div>
+        <div class="form-row">
+            <label>Email</label>
+            <input name="contact_email" type="text" value="" placeholder={{ email }}>
+        </div>
+        <div class="form-row">
+            <label>Phone Number</label>
+            <input name="contact_phone" type="text" value="" placeholder={{ phone }}>
+        </div>
+        <button>Submit</button>
+    </form>
+</div>
 {% endblock %}

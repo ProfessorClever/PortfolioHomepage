@@ -4,6 +4,7 @@
 
 {% block imports %}
 <link rel="stylesheet" href="../static/stylesEditProjects.css" />
+<link rel="stylesheet" href="../static/stylesForms.css" />
 <script src="../static/editProjectsScript.js"></script>
 {% endblock %}
 
@@ -11,7 +12,7 @@
 <div class="controlbar">
     <button id="createNewProject">+ Create new Project</button>
 </div>
-<div id="newProject">
+<div id="newProject" class="form-box">
     <h2>Create new Project</h2>
     <form action="http://localhost:5000/api/createProject" method="POST">
         <div class="form-row">
@@ -28,8 +29,8 @@
         </div>
         <div class="form-row">
             <div>
-                <input class="sub_btn" type="submit" value="create">
-                <button id="createAbort">abort</button>
+                <button class="form_btn" type="submit" value="create">
+                <button id="createAbort" class="form-btn">abort</button>
             </div>
         </div>
     </form>

@@ -1,0 +1,33 @@
+button.form-btn {
+    height: fit-content;
+    width: fit-content;
+    padding: 3vh;
+    border-radius: 30px;
+    font-size: larger;
+}
+
+button.form-btn:hover {
+    cursor: pointer;
+}
+
+.form-box {
+    width: 40%;
+    color: white;
+    margin-left: 20px;
+}
+
+.form-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box input {
+    width: 60%;
+}

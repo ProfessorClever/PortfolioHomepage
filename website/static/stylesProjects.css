@@ -1,7 +1,3 @@
-.nav-distance {
-    margin-top: 19vh;
-}
-
 .projectDiv {
     height: 45vh;
     aspect-ratio: 3/1;
@@ -28,4 +24,8 @@ p.projectDescription {
 
 p.projectID {
     display: none;
+}
+
+#newProjects {
+    display: none
 }

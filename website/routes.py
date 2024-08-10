@@ -50,7 +50,8 @@ def editMePage():
 
 @app.route("/EditContact")
 def editContactPage():
-    return render_template("editContact.html")
+    contact = Contact.query.first()
+    return render_template("editContact.html", name = contact.name, email = contact.email, phone = contact.phone)
 
 #   --- DB Api ---
 
@@ -60,22 +61,45 @@ def createProject():
     description = request.form.get('project_description')
     picture_id = request.form.get('projcet_picture')
 
-    print(description)
-
     if name and description:
         project = Project(name = name, description = description, image = picture_id)
         db.session.add(project)
         db.session.commit()
-        print("[API]: The project '"+name+"' was created and added to the database")
-        return 'Project has been created', 200
+
+        message="The project '"+name+"' was created and added to the database"
+        print("[API]: "+message)
+        return message, 200
     elif not name:
-        print("[API]: Error while creating a new project")
-        return 'No name recived', 400
+        message="Error while creating a new project! No name recived"
+        print("[API]: "+message)
+        return message, 400
     else:
-        print("[API]: Error while creating a new project")
-        return 'No Discription recived', 400
+        message="Error while creating a new project! No description recived"
+        print("[API]: "+message)
+        return message, 400
 
+@app.route("/api/editContact", methods=['POST'])
+def editContact():
+    name = request.form.get('contact_name')
+    email = request.form.get('contact_email')
+    phone = request.form.get('contact_phone')
 
+    contact = Contact.query.first()
+
+    if contact:
+        contact.name = name
+        contact.email = email
+        contact.phone = phone
+
+        db.session.commit()
+        
+        message='Contact was successfully updated'
+        print("[API]: "+message)
+        return message, 200
+    else:
+        message='Contact table could not be found'
+        print("[API]: "+message)
+        return message, 404
 
 @app.errorhandler(404)
 def notFoundPage(e):

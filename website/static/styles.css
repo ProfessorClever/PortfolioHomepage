@@ -51,3 +51,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #8e8e8e;
 }
+
+.nav-distance {
+  margin-top: 19vh;
+}
