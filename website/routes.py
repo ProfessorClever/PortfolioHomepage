@@ -25,7 +25,8 @@ def abouteMePage():
 
 @app.route("/Contact")
 def contactPage():
-    return render_template("contact.html")
+    me = Me.query.first_or_404()
+    return render_template("contact.html", name = me.name, email = me.email, phone = me.phone)
 
 #   --- Admin Sides ---
 
@@ -35,7 +36,8 @@ def adminPage():
 
 @app.route("/EditProjects")
 def editProjectsPage():
-    return render_template("editProjects.html")
+    projects = db.session.execute(db.select(Project).order_by(Project.begin)).scalars()
+    return render_template("editProjects.html", projects = None)
 
 @app.route("/EditProjects/<projectID>")
 def editProjectPage(projectID):

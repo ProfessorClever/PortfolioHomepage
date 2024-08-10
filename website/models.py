@@ -42,3 +42,10 @@ class Image(db.Model):
     name = db.Column(db.String, nullable=False)
     data = db.Column(db.LargeBinary, nullable=False)
     mime_type = db.Column(db.String, nullable=False)
+
+class Me(db.Model):
+    __tablename__ = 'me'
+    id = db.Column(db.Integer, primary_key=True, default=1)
+    name = db.Column(db.String, nullable=False)
+    email = db.Column(db.String, nullable=False)
+    phone = db.Column(db.String, nullable=False)
