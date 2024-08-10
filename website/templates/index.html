@@ -29,9 +29,12 @@
     <div class="flexBox"> 
         <div class="contentBox">
             <h2>Latest</h2>
-            <div>
-                <h2>{{ latest.title }}</h2>
-                <p>{{ latest.description }}</p>
+            <div class="project-card">
+                <img class="project-img" src={{ latest.image }}>
+                <div class="project-text">
+                    <h2>{{ latest.title }}</h2>
+                    <p>{{ latest.description }}</p>
+                </div>
             </div>
         </div>
         <div class="contentBox">
