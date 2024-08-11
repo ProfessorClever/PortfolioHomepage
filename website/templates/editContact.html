@@ -4,11 +4,12 @@
 
 {% block imports %}
 <link rel="stylesheet" href="../static/stylesForms.css" />
+<script src="../static/editContactScript.js"></script>
 {% endblock %}
 
 {% block contents %}
 <div class="form-box">
-    <form action="http://localhost:5000/api/editContact" method="POST" class="nav-distance">
+    <form id="contactForm" method="POST" class="nav-distance">
         <div class="form-row">
             <label>Name</label>
             <input name="contact_name" type="text" value="" placeholder={{ name }}>
@@ -22,6 +23,7 @@
             <input name="contact_phone" type="text" value="" placeholder={{ phone }}>
         </div>
         <button>Submit</button>
+        <p id="responseMessage"></p>
     </form>
 </div>
 {% endblock %}

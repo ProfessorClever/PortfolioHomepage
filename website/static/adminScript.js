@@ -3,23 +3,28 @@ document.addEventListener("DOMContentLoaded", function () { //This wrapper makes
     document.getElementById("edit-me-link").addEventListener("click", toAboutMe);
     document.getElementById("edit-projects-link").addEventListener("click", toProjects);
     document.getElementById("edit-contact-link").addEventListener("click", toContact);
+    document.getElementById("back-to-user-link").addEventListener("click", backToUser);
     document.getElementById("menu-button").addEventListener("click", toggleMenu);
   });
   
   function toHome() {
-    window.location.assign("/");
+    window.location.assign("/Admin");
   }
   
   function toAboutMe() {
-    window.location.assign("/EditMe");
+    window.location.assign("/Admin/EditMe");
   }
   
   function toProjects() {
-    window.location.assign("/EditProjects")
+    window.location.assign("/Admin/EditProjects")
   }
   
   function toContact() {
-    window.location.assign("/EditContact")
+    window.location.assign("/Admin/EditContact")
+  }
+
+  function backToUser() {
+    window.location.assign("/")
   }
   
   function toggleMenu() {

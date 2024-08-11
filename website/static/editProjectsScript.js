@@ -34,5 +34,23 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("createNewProject").addEventListener('click', function () {
         changeMode(1)
     })
+
+    document.getElementById("newProjectForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        
+        fetch('/Api/editContact', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(message => {
+            document.getElementById('newProjectResponseMessage').innerText = message;
+        })
+        .catch(error => {
+            document.getElementById('newProjectResponseMessage').innerText = 'An error occurred while sending the message.';
+            console.error('Error:', error);
+        });
+    })
         
 });

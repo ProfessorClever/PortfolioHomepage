@@ -14,7 +14,7 @@
 </div>
 <div id="newProject" class="form-box">
     <h2>Create new Project</h2>
-    <form action="http://localhost:5000/api/createProject" method="POST">
+    <form id="newProjectForm" method="POST">
         <div class="form-row">
             <label>Name</label>
             <input name="project_name" type="text" value="" placeholder="Enter name">
@@ -27,6 +27,7 @@
             <label>Picture</label>
             <input name="project_picture" type="number" value="" placeholder="Enter Picture ID">
         </div>
+        <p id="newProejctResponseMessage"></p>
         <div class="form-row">
             <div>
                 <button class="form_btn" type="submit" value="create">
