@@ -1,4 +1,5 @@
-from flask import render_template, request
+import io
+from flask import render_template, request, send_file
 from website import app, db
 from website.models import *
 from werkzeug.utils import secure_filename
@@ -113,6 +114,25 @@ def editContact():
         message='Contact table could not be found'
         print("[API]: "+message)
         return message, 404
+    
+@app.route("/api/getImage/<int:img_id>", methods=['GET'])
+def getImage(img_id):
+    if img_id is not None:
+        image = Image.query.get(img_id)
+    else:
+        image = Image.query.get(1)
+    if image:
+        return send_file(
+            io.BytesIO(image.data),
+            mimetype=image.mime_type,
+            as_attachment=True,
+            download_name=image.name
+        )
+    else:
+        return 'Image not found', 404
+        
+
+
 
 @app.errorhandler(404)
 def notFoundPage(e):
