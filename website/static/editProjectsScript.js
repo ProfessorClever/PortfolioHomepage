@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         const formData = new FormData(this);
         
-        fetch('/Api/editContact', {
+        fetch('/Api/createProject', {
             method: 'POST',
             body: formData
         })
