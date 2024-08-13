@@ -5,6 +5,7 @@
 {% block imports %}
 <link rel="stylesheet" href="../static/stylesEditProjects.css" />
 <link rel="stylesheet" href="../static/stylesForms.css" />
+<link rel="stylesheet" href="../static/stylesProjectCards.css" />
 <script src="../static/editProjectsScript.js"></script>
 {% endblock %}
 
@@ -55,12 +56,12 @@
                 <button class="editProjectButton" projectId={{ project.id }}>Edit</button>
                 <button class="deleteProjectButton" projectId={{ project.id }}>Delete</button>
             </div>
-            <div class="projectDiv">
-                <h2 class="projectTitle">
-                    {{ project.title }}
-                </h2>
-                <p class="projectDiscription">{{ project.discripton }}</p>
-                <p class="projectId">{{ project.id }}</p>
+            <div class="project-card" id="popular">
+                <img class="project-img" src="../static/ProjectDefaultPic.svg">
+                <div class="project-text">
+                    <h2>{{ project.name }}</h2>
+                    <p>{{ project.description }}</p>
+                </div>
             </div>
         </div>
         {% endfor %}

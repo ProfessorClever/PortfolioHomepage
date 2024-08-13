@@ -3,6 +3,14 @@
     flex-direction: row;
 }
 
+body {
+    all: unset;
+}
+
+.scrollableContent {
+    width: 99vw;
+}
+
 .project-card .project-img {
     width: 15vw;
     aspect-ratio: 1/1;

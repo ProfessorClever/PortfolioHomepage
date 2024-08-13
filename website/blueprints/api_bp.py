@@ -66,4 +66,16 @@ def getImage(img_id):
         )
     else:
         return 'Image not found', 404
-  
+
+@api_bp.route("/deleteProject/<int:projectID>", methods=['POST'])
+def deleteProject(projectID):
+    project = Project.query.get(projectID)
+    if project is not None:
+        message = 'Project '+project.name+' has been deleted'
+        db.session.delete(project)
+        print("[API]: "+message)
+        return message, 200
+    else:
+        message = 'Project was not found'
+        print("[API]: "+message)
+        return message, 404

@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    document.getElementById("createAbort").addEventListener('click', function () {
+    document.getElementById("createAbort").addEventListener('click', function (event) {
+        event.preventDefault();
         changeMode(0)
     })
 
@@ -52,5 +53,50 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error('Error:', error);
         });
     })
-        
+    
+    document.querySelectorAll('.openProjectButton').forEach(button => {
+        button.addEventListener('click', function () {
+            const projectId = this.getAttribute('projectId');
+            openProject(projectId);
+        });
+    });
+
+    document.querySelectorAll('.editProjectButton').forEach(button => {
+        button.addEventListener('click', function () {
+            const projectId = this.getAttribute('projectId');
+            editProject(projectId);
+        });
+    });
+
+    document.querySelectorAll('.deleteProjectButton').forEach(button => {
+        button.addEventListener('click', function () {
+            const projectId = this.getAttribute('projectId');
+            deleteProject(projectId);
+        });
+    });
 });
+
+function openProject(projectId) {
+    console.log("Opening project with ID:", projectId);
+    window.location.assign = `/Projects/${projectId}`; 
+}
+
+function editProject(projectId) {
+    console.log("Editing project with ID:", projectId);
+    window.location.assign = `/Admin/EditProject/${projectId}`;
+}
+
+function deleteProject(projectId) {
+    console.log("Deleting project with ID:", projectId);
+    if (confirm("Are you sure you want to delete this project?")) {
+        fetch(`/Api/DeleteProject/${projectId}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            location.reload();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+}

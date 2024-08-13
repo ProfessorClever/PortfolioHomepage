@@ -62,22 +62,29 @@ button:hover {
 }
 
 .projectSlot {
-    width: 80%;
-    border-radius: 30%;
-    background-color:rgba(0,0,0, 0.6);
+    margin-left: 30px;
+    margin-top: 30px;
     display: flex;
+    flex-direction: row;
+    width: 80%;
+    background-color: rgba(0,0,0, 0.8);
+    border-radius: 30px;
+    padding: 2vh;
 }
 
 .editDiv {
-    flex: 1;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-right: 30px;
 }
 
 .editDiv button {
-    height: fit-content;
-    width: 90%;
+    padding: unset;
+    height: 4vw;
+    width: 10vw;
     font-family: Inter;
-    font-size: medium;
+    font-size: 1.5vw;
 }
 
 .projcetDiv {

@@ -11,7 +11,7 @@ def adminPage():
 @admin_bp.route("/EditProjects")
 def editProjectsPage():
     projects = db.session.execute(db.select(Project).order_by(Project.begin)).scalars()
-    return render_template("editProjects.html", projects = None)
+    return render_template("editProjects.html", projects = projects)
 
 @admin_bp.route("/EditProjects/<projectID>")
 def editProjectPage(projectID):
