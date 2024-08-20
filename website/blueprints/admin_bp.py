@@ -1,6 +1,6 @@
 from flask import Blueprint, redirect, render_template, url_for
 from website import db
-from website.models import Project, Contact
+from website.models import Project, Contact, Image
 
 admin_bp = Blueprint('admin_bp', __name__, template_folder="templates")
 
@@ -26,3 +26,8 @@ def editMePage():
 def editContactPage():
     contact = Contact.query.first()
     return render_template("editContact.html", name = contact.name, email = contact.email, phone = contact.phone)
+
+@admin_bp.route("/ImageGallery")
+def imageGallery():
+    images = db.session.execute(db.select(Image).order_by(Image.id)).scalars()
+    return render_template("imageGallery.html", images=images)

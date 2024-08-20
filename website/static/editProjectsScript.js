@@ -89,8 +89,8 @@ function editProject(projectId) {
 function deleteProject(projectId) {
     console.log("Deleting project with ID:", projectId);
     if (confirm("Are you sure you want to delete this project?")) {
-        fetch(`/Api/DeleteProject/${projectId}`, {
-            method: 'DELETE'
+        fetch(`/Api/deleteProject/${projectId}`, {
+            method: 'POST'
         })
         .then(response => response.text())
         .then(data => {
