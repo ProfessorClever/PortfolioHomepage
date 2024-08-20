@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, Integer, String, DateTime, ForeignKey
+from sqlalchemy import Table, Column, Integer, ForeignKey, UniqueConstraint
 from sqlalchemy.orm import relationship
 from website import db
 
@@ -7,14 +7,15 @@ project_element = Table(
     db.metadata,
     Column('project_id', Integer, ForeignKey('projects.id'), primary_key=True),
     Column('element_id', Integer, ForeignKey('elements.id'), primary_key=True),
-    Column('prio', Integer, nullable=False)
+    Column('prio', Integer, nullable=False),
+    UniqueConstraint('project_id', 'prio', name='uq_project_prio')
 )
 
 class Project(db.Model):
     __tablename__ = 'projects'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.String, nullable=False)
-    image = db.Column(db.Integer, db.ForeignKey('images.id'), nullable=True)
+    image = db.Column(db.Integer, db.ForeignKey('images.id'), nullable=False, default=1)
     description = db.Column(db.String, nullable=False)
     begin = db.Column(db.DateTime, default=db.func.now(), nullable=False)
     views = db.Column(db.Integer, default=0)

@@ -27,11 +27,12 @@
         <button class="bigButton" id="showProjectsButton">Show Projects</button>
         </div>
     </div>
-    <div class="flexBox"> 
+    <div class="flexBox">
+        {% if latest %}
         <div class="contentBox">
             <h2>Latest</h2>
             <div class="project-card" id="latest">
-                <img class="project-img" src="../static/ProjectDefaultPic.svg">
+                <img class="project-img" src={{ url_for('api_bp.getImage', img_id=latest.image) }}>
                 <div class="project-text">
                     <h2>{{ latest.name }}</h2>
                     <p>{{ latest.description }}</p>
@@ -39,10 +40,12 @@
                 <p id="latest_id" style="display:none">{{ latest.id }}</p>
             </div>
         </div>
+        {% endif %}
+        {% if popular %}
         <div class="contentBox">
             <h2>Popular</h2>
             <div class="project-card" id="popular">
-                <img class="project-img" src="../static/ProjectDefaultPic.svg">
+                <img class="project-img" src={{ url_for('api_bp.getImage', img_id=popular.image) }}>
                 <div class="project-text">
                     <h2>{{ popular.name }}</h2>
                     <p>{{ popular.description }}</p>
@@ -50,6 +53,7 @@
                 <p id="popular_id" style="display:none">{{ popular.id }}</p>
             </div>
         </div>
+        {% endif %}
     </div>
     <div class="contentBox">
         <iframe src="https://embed.acast.com/63b5a13408aab5001135d7c1" frameBorder="0" allow="autoplay" width="100%" height="110"></iframe>

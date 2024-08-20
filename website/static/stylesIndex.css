@@ -10,18 +10,18 @@
 }
 
 .titleBox {
-    top:100px;
-    position: relative; 
+    position: relative;
+    margin: 0;
     margin-left: 5vw;
-    margin-top: 15vh;
-    margin-bottom: 18vh;
-    border-radius: 30px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 80vw;
 }
 
 .floatingText {
     margin-left: 7vw;
-    margin-top: 30vh;
 }
 
 .floatingText p {
