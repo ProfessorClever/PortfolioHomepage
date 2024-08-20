@@ -1,0 +1,49 @@
+
+.flexGallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.galleryDiv {
+    position: relative;
+    height: 20vh;
+    margin: 2vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.galleryDiv img {
+    height: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.galleryDiv h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-align: center;
+}
+
+
+.galleryDiv:hover img {
+    opacity: 0.5;
+}
+
+.galleryDiv:hover h2 {
+    opacity: 1; 
+}
+
+.galleryDiv > form {
+    height: 100%;
+    display: block;
+}

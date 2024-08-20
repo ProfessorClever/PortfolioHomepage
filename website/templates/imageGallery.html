@@ -1,0 +1,33 @@
+{% extends 'baseAdmin.html'%}
+
+{% block title %}Image Gallery{% endblock %}
+
+{% block imports %}
+<link rel="stylesheet" href="../static/stylesGallery.css" />
+<link rel="stylesheet" href="../static/stylesForms.css" />
+<script src="../static/galleryScript.js"></script>
+{% endblock %}
+
+{% block contents %}
+<div class="scrollableContent flexGallery">
+    <div class="nav-distance" style="width:90vw; height:1px"></div>
+    <div class="galleryDiv">
+        <div class="form-box" style="width: 100%; margin:0">
+            <form id="uploadImageForm" method="POST" enctype="multipart/form-data" action="/api/uploadImage">
+                <div class="form-row">
+                    <label for="image">Choose an image:</label>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                </div>
+                <button>Submit</button>
+                <p id="responseMessage"></p>
+            </form>
+        </div>
+    </div>
+{% for image in images %}
+    <div class="galleryDiv">
+        <img src={{url_for('api_bp.getImage', img_id=image.id)}} />
+        <h2>{{image.name}} {{image.id}}</h2> 
+    </div>
+{% endfor %}
+</div>
+{% endblock %}
