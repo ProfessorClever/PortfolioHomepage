@@ -35,6 +35,17 @@ body {
   position: relative;
 }
 
+.scrollableContent {
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 1;
+  overflow-y: scroll;
+  width: 99vw;
+  height: 100vh;
+  position: fixed;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }

@@ -1,31 +1,10 @@
 .projectDiv {
-    height: 45vh;
-    aspect-ratio: 3/1;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    background-color: rgba(0,0,0, 0.6);
+    top:100px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.40);
+    margin-left: 5vw;
+    margin-bottom: 10vh;
     border-radius: 30px;
-}
-
-h2.projectTitle {
-    margin: unset;
-    margin-top: 30px;
-    margin-left: 30px;
-    font-size: 8vh;
-    color: #7f51c7;
-}
-
-p.projectDescription {
-    margin: unset;
-    margin-left: 30px;
-    font-size: 4vh;
-    color: #d2d2d2;;
-}
-
-p.projectID {
-    display: none;
-}
-
-#newProjects {
-    display: none
+    width: 80vw;
+    padding: 1rem;
 }

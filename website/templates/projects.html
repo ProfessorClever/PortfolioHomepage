@@ -4,6 +4,7 @@
 
 {% block imports %}
 <link rel="stylesheet" href="../static/stylesProjects.css" />
+<link rel="stylesheet" href="../static/stylesProjectCards.css" />
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         Array.from(document.getElementsByClassName("projectDiv")).forEach((div) => {
@@ -27,9 +28,14 @@
     {% if projects != None %}
         {% for project in projects %}
         <div class="projectDiv">
-            <p class="projectID">{{ project.id }}</p>
-            <h2 class="projectTitle">{{ project.name }}</h2>
-            <p class="projectDescription">{{ project.description }}</p>
+            <div class="project-card">
+                <img class="project-img" src={{ url_for('api_bp.getImage', img_id=project.image) }}>
+                <div class="project-text">
+                    <h2>{{ project.name }}</h2>
+                    <p>{{ project.description }}</p>
+                </div>
+                <p class="project_id" style="display:none">{{ project.id }}</p>
+            </div>
         </div>
         {% endfor %}
     {% endif %}
