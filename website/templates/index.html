@@ -33,9 +33,21 @@
             <h2>Latest</h2>
             <div class="project-card" id="latest">
                 <img class="project-img" src={{ url_for('api_bp.getImage', img_id=latest.image) }}>
-                <div class="project-text">
-                    <h2>{{ latest.name }}</h2>
-                    <p>{{ latest.description }}</p>
+                <div class="project-content">
+                    <div class="project-text">
+                        <h2>{{ latest.name }}</h2>
+                        <p>{{ latest.description }}</p>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat-line">
+                            <img src="../static/DateIcon.svg">
+                            <p>{{ latest.begin }}</p>
+                        </div>
+                        <div class="stat-line">
+                            <img src="../static/ViewsIcon.svg">
+                            <p>{{ latest.views }}</p>
+                        </div>
+                    </div>
                 </div>
                 <p id="latest_id" style="display:none">{{ latest.id }}</p>
             </div>
@@ -46,14 +58,27 @@
             <h2>Popular</h2>
             <div class="project-card" id="popular">
                 <img class="project-img" src={{ url_for('api_bp.getImage', img_id=popular.image) }}>
-                <div class="project-text">
-                    <h2>{{ popular.name }}</h2>
-                    <p>{{ popular.description }}</p>
+                <div class="project-content">
+                    <div class="project-text">
+                        <h2>{{ popular.name }}</h2>
+                        <p>{{ popular.description }}</p>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat-line">
+                            <img src="../static/DateIcon.svg">
+                            <p>{{ popular.begin }}</p>
+                        </div>
+                        <div class="stat-line">
+                            <img src="../static/ViewsIcon.svg">
+                            <p>{{ popular.views }}</p>
+                        </div>
+                    </div>
                 </div>
                 <p id="popular_id" style="display:none">{{ popular.id }}</p>
             </div>
         </div>
         {% endif %}
     </div>
+    <div class="nav-distance"></div>
 </div>
 {% endblock %}

@@ -15,10 +15,13 @@
     object-position: left top;
 }
 
-.project-card .project-text {
-    display: block;
+.project-card .project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     color: #d2d2d2;
     margin-left: 30px;
+    width: 100%;
 }
 
 .project-card .project-text h2 {
@@ -29,4 +32,31 @@
 .project-card .project-text p {
     margin: unset;
     font-size: 1.5vw;
+}
+
+.project-card .project-stats {
+    display: flex;
+    flex-direction: row;
+    font-size: 1vw;
+    align-self: end;
+    margin-right: 1vw;
+}
+
+.project-stats img {
+    height: 100%;
+}
+
+.stat-line {
+    height: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    margin-left: 1.5vw;
+}
+
+.stat-line p {
+    height:100%;
+    margin: 0;
+    margin-left: 0.5vw;
 }

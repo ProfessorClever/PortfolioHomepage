@@ -98,6 +98,11 @@
     border-radius: 30px;
     width: 80vw;
     padding: 1rem;
+    transition-duration: 0.5s;
+}
+
+.contentBox:hover {
+    background: rgba(0, 0, 0, 0.80);
 }
 
 @keyframes slideInFromLeft {
