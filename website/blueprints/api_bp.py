@@ -9,17 +9,13 @@ api_bp = Blueprint('api_bp', __name__)
 def createProject():
     name = request.form.get('project_name')
     description = request.form.get('project_description')
-    picture_id = request.form.get('projcet_picture')
+    picture_id = request.form.get('project_picture', default=1, type=str)
+    print("saved picture id: "+str(picture_id))
 
     if name and description and picture_id:
-        project = Project(name = name, description = description, image = picture_id)
+        project = Project(name = name, description = description, image = int(picture_id))
         db.session.add(project)
         db.session.commit()
-    elif name and description:
-        project = Project(name = name, description = description, image = 1)
-        db.session.add(project)
-        db.session.commit()
-
         message="The project '"+name+"' was created and added to the database"
         print("[API]: "+message)
         return message, 200
@@ -89,9 +85,9 @@ def uploadImage():
 
 @api_bp.route("/getImage/<int:img_id>", methods=['GET'])
 def getImage(img_id):
-    if img_id is not None or img_id == 0:
+    if img_id is not None:
         image = Image.query.get(img_id)
-    else:
+    if not image:
         image = Image.query.get(1)
     if image:
         extension = image.mime_type.split('/')[-1]

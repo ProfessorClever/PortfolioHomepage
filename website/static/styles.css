@@ -24,7 +24,7 @@ body {
   object-fit: cover;
   object-position: right bottom;
   transition: all, ease-out, 500ms;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .parallax1 {
@@ -33,6 +33,7 @@ body {
 
 .parallax2 {
   position: relative;
+  overflow: visible;
 }
 
 .scrollableContent {
