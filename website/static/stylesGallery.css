@@ -22,6 +22,9 @@
 
 .galleryDiv h2 {
     position: absolute;
+    max-width: 90%;
+    max-height: 90%;
+    font-size: 2vmin;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
