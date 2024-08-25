@@ -1,0 +1,10 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_78_2" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="18" y="100" width="364" height="218">
+<g style="mix-blend-mode:hard-light">
+<ellipse cx="200" cy="209" rx="182" ry="109" fill="#7F51C7"/>
+</g>
+</mask>
+<g mask="url(#mask0_78_2)">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M447 -30H-39V422H447V-30ZM200 279C238.66 279 270 247.66 270 209C270 170.34 238.66 139 200 139C161.34 139 130 170.34 130 209C130 247.66 161.34 279 200 279Z" fill="#D2D2D2"/>
+</g>
+</svg>
