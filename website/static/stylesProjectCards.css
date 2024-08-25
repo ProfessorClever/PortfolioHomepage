@@ -3,12 +3,16 @@
     flex-direction: row;
 }
 
+.project-card:hover {
+    cursor: pointer;
+}
+
 .scrollableContent {
     width: 99vw;
 }
 
 .project-card .project-img {
-    width: 15vw;
+    height: 15vw;
     aspect-ratio: 1/1;
     border-radius: 30px;
     object-fit:cover;
