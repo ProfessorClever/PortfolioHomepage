@@ -12,7 +12,7 @@
 }
 
 .project-card .project-img {
-    height: 15vw;
+    height: 15vmax;
     aspect-ratio: 1/1;
     border-radius: 30px;
     object-fit:cover;
@@ -30,20 +30,20 @@
 
 .project-card .project-text h2 {
     margin: unset;
-    font-size: 2.5vw;
+    font-size: 2.5vmax;
 }
 
 .project-card .project-text p {
     margin: unset;
-    font-size: 1.5vw;
+    font-size: 1.5vmax;
 }
 
 .project-card .project-stats {
     display: flex;
     flex-direction: row;
-    font-size: 1vw;
+    font-size: 1vmax;
     align-self: end;
-    margin-right: 1vw;
+    margin-right: 1vmax;
 }
 
 .project-stats img {
@@ -51,16 +51,16 @@
 }
 
 .stat-line {
-    height: 1vw;
+    height: 1vmax;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: nowrap;
-    margin-left: 1.5vw;
+    margin-left: 1.5vmax;
 }
 
 .stat-line p {
     height:100%;
     margin: 0;
-    margin-left: 0.5vw;
+    margin-left: 0.5vmax;
 }
