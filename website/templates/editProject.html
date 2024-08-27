@@ -1,9 +1,32 @@
 {% extends 'baseAdmin.html'%}
 
-{% block title %}Manage Site{% endblock %}
+{% block title %}{{ project.name }}{% endblock %}
 
 {% block imports %}
 {% endblock %}
 
 {% block contents %}
+<div class="scrollableContent">
+    <div class="nav-distance"></div>
+    <h1 class="project-title">{{ project.name }}</h1>
+    <div>
+        {% if project.image == 1 %}
+        <img class="project-img" src={{ url_for('api_bp.getImage', img_id=project.image) }}>
+        {% endif %}
+        <p>{{ project.description }}</p>
+        <div class="project-stats">
+            <div class="stat-line">
+                <img src="../static/DateIcon.svg">
+                <p>{{ project.begin }}</p>
+            </div>
+            <div class="stat-line">
+                <img src="../static/ViewsIcon.svg">
+                <p>{{ project.views }}</p>
+            </div>
+        </div>
+    </div>
+    {% for element in project.elements %}
+
+    {% endfor %}
+</div>
 {% endblock %}
