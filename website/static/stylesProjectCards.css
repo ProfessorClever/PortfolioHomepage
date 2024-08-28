@@ -1,11 +1,10 @@
 .project-card {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
-.project-card:hover {
-    cursor: pointer;
-}
+
 
 .scrollableContent {
     width: 99vw;

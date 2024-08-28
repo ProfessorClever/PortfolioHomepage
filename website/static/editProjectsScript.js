@@ -78,12 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function openProject(projectId) {
     console.log("Opening project with ID:", projectId);
-    window.location.assign = `/Projects/${projectId}`; 
+    window.location.assign(`/Projects/${projectId}`); 
 }
 
 function editProject(projectId) {
     console.log("Editing project with ID:", projectId);
-    window.location.assign = `/Admin/EditProject/${projectId}`;
+    window.location.assign(`/Admin/EditProjects/${projectId}`);
 }
 
 function deleteProject(projectId) {

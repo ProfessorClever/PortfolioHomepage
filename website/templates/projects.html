@@ -28,7 +28,7 @@
     {% if projects != None %}
         {% for project in projects %}
         <div class="projectDiv">
-            <div class="project-card">
+            <div class="project-card" style="cursor: pointer">
                 <img class="project-img" src={{ url_for('api_bp.getImage', img_id=project.image) }}>
                 <div class="project-content">
                     <div class="project-text">
