@@ -2,16 +2,16 @@
 
 {% block fimports %}
 <!-- import icon and css styles for navbar -->
-<link rel="icon" href="../static/Logo.png" type="png" />
-<link rel="stylesheet" href="../static/stylesNavbar.css" />
-<script src="../static/adminScript.js"></script>
+<link rel="icon" href={{ url_for('static', filename='Logo.png')}} type="png" />
+<link rel="stylesheet" href={{ url_for('static', filename='stylesNavbar.css')}} />
+<script src={{ url_for('static', filename='adminScript.js')}}></script>
 {% endblock %} 
 
 {% block fcontents %}
 <!-- add navbar -->
 <div class="navbar">
   <div class="navbox" id="logo">
-    <img src="../static/Logo.png" alt="P-Clever Logo" class="logo" />
+    <img src={{ url_for('static', filename='Logo.png')}} alt="P-Clever Logo" class="logo" />
     <h2 class="navtext">P-Clever</h2>
   </div>
   <div class="navlinks">

@@ -3,8 +3,8 @@
 {% block title %}Manage Site{% endblock %}
 
 {% block imports %}
-<link rel="stylesheet" href="../static/stylesForms.css" />
-<script src="../static/editContactScript.js"></script>
+<link rel="stylesheet" href={{ url_for('static', filename='stylesForms.css')}} />
+<script src={{ url_for('static', filename='editContactScript.js')}}></script>
 {% endblock %}
 
 {% block contents %}

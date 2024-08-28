@@ -3,9 +3,9 @@
 {% block title %} P-Clever Portfolio {% endblock %}
 
 {% block imports %}
-<link rel="stylesheet" href="../static/stylesIndex.css">
-<link rel="stylesheet" href="../static/stylesProjectCards.css" />
-<script src="../static/indexScript.js"></script>
+<link rel="stylesheet" href={{ url_for('static', filename='stylesIndex.css')}}>
+<link rel="stylesheet" href={{ url_for('static', filename='stylesProjectCards.css')}} />
+<script src={{ url_for('static', filename='indexScript.js')}}></script>
 {% endblock %}
 
 {% block contents %}
@@ -40,11 +40,11 @@
                     </div>
                     <div class="project-stats">
                         <div class="stat-line">
-                            <img src="../static/DateIcon.svg">
+                            <img src={{ url_for('static', filename='DateIcon.svg')}}>
                             <p>{{ latest.begin }}</p>
                         </div>
                         <div class="stat-line">
-                            <img src="../static/ViewsIcon.svg">
+                            <img src={{ url_for('static', filename='ViewsIcon.svg')}}>
                             <p>{{ latest.views }}</p>
                         </div>
                     </div>
@@ -65,11 +65,11 @@
                     </div>
                     <div class="project-stats">
                         <div class="stat-line">
-                            <img src="../static/DateIcon.svg">
+                            <img src={{ url_for('static', filename='DateIcon.svg')}}>
                             <p>{{ popular.begin }}</p>
                         </div>
                         <div class="stat-line">
-                            <img src="../static/ViewsIcon.svg">
+                            <img src={{ url_for('static', filename='ViewsIcon.svg')}}>
                             <p>{{ popular.views }}</p>
                         </div>
                     </div>

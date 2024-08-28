@@ -3,9 +3,9 @@
 {% block title %}Image Gallery{% endblock %}
 
 {% block imports %}
-<link rel="stylesheet" href="../static/stylesGallery.css" />
-<link rel="stylesheet" href="../static/stylesForms.css" />
-<script src="../static/galleryScript.js"></script>
+<link rel="stylesheet" href={{ url_for('static', filename='stylesGallery.css')}} />
+<link rel="stylesheet" href={{ url_for('static', filename='stylesForms.css')}} />
+<script src={{ url_for('static', filename='galleryScript.js')}}></script>
 {% endblock %}
 
 {% block contents %}

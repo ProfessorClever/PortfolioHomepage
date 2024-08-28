@@ -3,8 +3,8 @@
 {% block title %} P-Clever's Projects {% endblock %}
 
 {% block imports %}
-<link rel="stylesheet" href="../static/stylesProjects.css" />
-<link rel="stylesheet" href="../static/stylesProjectCards.css" />
+<link rel="stylesheet" href={{ url_for('static', filename='stylesProjects.css')}} />
+<link rel="stylesheet" href={{ url_for('static', filename='styleProjectCards.css')}} />
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         Array.from(document.getElementsByClassName("projectDiv")).forEach((div) => {
@@ -37,11 +37,11 @@
                     </div>
                     <div class="project-stats">
                         <div class="stat-line">
-                            <img src="../static/DateIcon.svg">
+                            <img src={{ url_for('static', filename='DateIcon.svg')}}>
                             <p>{{ project.begin }}</p>
                         </div>
                         <div class="stat-line">
-                            <img src="../static/ViewsIcon.svg">
+                            <img src={{ url_for('static', filename='ViewsIcon.svg')}}>
                             <p>{{ project.views }}</p>
                         </div>
                     </div>
