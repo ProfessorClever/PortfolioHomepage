@@ -102,9 +102,9 @@ def getImage(img_id):
     else:
         return 'Image not found', 404
 
-@api_bp.route("/deleteImage/<int:imageID>", methods=['POST'])
-def deleteImage(imageID):
-    image = Image.query.get(imageID)
+@api_bp.route("/deleteImage", methods=['POST'])
+def deleteImage():
+    image = Image.query.get(request.form.get('image_id'))
     if image is not None:
         message = 'Image '+image.name+' has been deleted'
         db.session.delete(image)

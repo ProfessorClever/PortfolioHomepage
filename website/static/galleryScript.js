@@ -17,4 +17,22 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error('Error:', error);
         });
     });
+    document.getElementById('deleteImageForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(this);
+        
+        fetch('/Api/deleteImage', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(message => {
+            document.getElementById('responseMessage').innerText = message;
+        })
+        .catch(error => {
+            document.getElementById('responseMessage').innerText = 'An error occurred while sending the message.';
+            console.error('Error:', error);
+        });
+    });
 });

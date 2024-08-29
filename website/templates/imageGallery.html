@@ -13,10 +13,24 @@
     <div class="nav-distance" style="width:90vw; height:1px"></div>
     <div class="galleryDiv">
         <div class="form-box" style="width: 100%; margin:0">
-            <form id="uploadImageForm" method="POST" enctype="multipart/form-data" action="/api/uploadImage">
+            <form id="uploadImageForm" method="POST" enctype="multipart/form-data">
+                <p>Upload an image:</p>
                 <div class="form-row">
-                    <label for="image">Choose an image:</label>
+                    <label for="image">Choose a image file:</label>
                     <input type="file" id="image" name="image" accept="image/*" required>
+                </div>
+                <button>Submit</button>
+                <p id="responseMessage"></p>
+            </form>
+        </div>
+    </div>
+    <div class="galleryDiv">
+        <div class="form-box" style="width: 100%; margin:0">
+            <form id="deleteImageForm" method="POST" enctype="multipart/form-data">
+                <p>Delete an image:</p>
+                <div class="form-row">
+                    <label for="image">Insert id:</label>
+                    <input type="text" id="image_id" name="image_id" required>
                 </div>
                 <button>Submit</button>
                 <p id="responseMessage"></p>

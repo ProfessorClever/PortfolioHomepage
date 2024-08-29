@@ -14,6 +14,7 @@ project_element = Table(
 
 project_tag = Table(
     'project_tag',
+    db.metadata,
     Column('project_id', Integer, ForeignKey('projects.id'), primary_key=True),
     Column('tag_id', Integer, ForeignKey('tags.id'), primary_key=True)
 )
