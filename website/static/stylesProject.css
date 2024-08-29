@@ -1,6 +1,7 @@
 .project-main-title {
-    font-size: 8vmax;
+    font-size: 6vmax;
     margin: 0;
+    margin-bottom: 30px;
     color: white;
     align-self: start;
 }
@@ -25,7 +26,7 @@
     font-size: 3vmax;
 }
 
-.overview-content p {
+.element-box .overview-content p {
     margin: 0;
     margin-left: 0.4vmax;
 }
@@ -41,6 +42,7 @@
     flex-direction: row;
     font-size: 2vmax;
     align-self: end;
+    margin-top: 30px;
     margin-right: 1.5vmax;
 }
 
