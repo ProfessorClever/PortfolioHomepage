@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () { //This wrapper makes
     document.getElementById("edit-contact-link").addEventListener("click", toContact);
     document.getElementById("back-to-user-link").addEventListener("click", backToUser);
     document.getElementById("gallery-link").addEventListener("click", toGallery);
+    document.getElementById("tags-link").addEventListener("click", toTags);
     document.getElementById("menu-button").addEventListener("click", toggleMenu);
   });
   
@@ -30,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function () { //This wrapper makes
 
   function toGallery() {
     window.location.assign("/Admin/ImageGallery")
+  }
+
+  function toTags() {
+    window.location.assign("/Admin/Tags")
   }
   
   function toggleMenu() {

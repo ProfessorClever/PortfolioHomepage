@@ -1,7 +1,7 @@
 import io
 from flask import Blueprint, request, send_file, make_response, redirect, url_for
 from website import db
-from website.models import Image, Project, Contact
+from website.models import Image, Project, Contact, Tag
 
 api_bp = Blueprint('api_bp', __name__)
 
@@ -10,7 +10,6 @@ def createProject():
     name = request.form.get('project_name')
     description = request.form.get('project_description')
     picture_id = request.form.get('project_picture', default=1, type=str)
-    print("saved picture id: "+str(picture_id))
 
     if name and description and picture_id:
         project = Project(name = name, description = description, image = int(picture_id))
@@ -129,3 +128,24 @@ def deleteProject(projectID):
         message = 'Project was not found'
         print("[API]: "+message)
         return message, 404
+
+@api_bp.route("/createTag", methods=['POST'])
+def createTag():
+    name = request.form.get('tag_name')
+    image_id = request.form.get('tag_picture', default=1, type=str)
+
+    if name and image_id:
+        tag = Tag(name = name, icon = int(image_id))
+        db.session.add(tag)
+        db.session.commit()
+        message="The tag '"+name+"' was created and added to the database"
+        print("[API]: "+message)
+        return message, 200
+    elif not name:
+        message="Error while creating a new tag! No name recived"
+        print("[API]: "+message)
+        return message, 400
+    else:
+        message="Error while creating a new tag! No image recived"
+        print("[API]: "+message)
+        return message, 400

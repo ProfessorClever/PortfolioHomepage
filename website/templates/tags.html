@@ -1,0 +1,55 @@
+{% extends 'baseAdmin.html'%}
+
+{% block title %}Edit Projects{% endblock %}
+
+{% block imports %}
+<link rel="stylesheet" href={{ url_for('static', filename='stylesTags.css')}} />
+<link rel="stylesheet" href={{ url_for('static', filename='stylesForms.css')}} />
+<script src={{ url_for('static', filename='tagsScript.js')}}></script>
+{% endblock %}
+
+{% block contents %}
+<div class="scrollableContent">
+    <div class="nav-distance"></div>
+    <div id="newTag" class="form-box">
+        <h2>Create new Tag</h2>
+        <form id="newTagForm" method="POST">
+            <div class="form-row">
+                <label>Name</label>
+                <input name="tag_name" type="text" value="" placeholder="Enter name">
+            </div>
+            <div class="form-row">
+                <label>Picture</label>
+                <input name="tag_picture" type="number" value="" placeholder="Enter Picture ID">
+            </div>
+            <p id="newProjectResponseMessage"></p>
+            <div class="form-row">
+                <div>
+                    <button class="form_btn" type="submit" value="create">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% if tags != None %}
+        {% for tag in tags %}
+        <div class="projectSlot">
+            <div class="editDiv">
+                <button class="editProjectButton" projectId={{ tag.id }}>Edit</button>
+                <button class="deleteProjectButton" projectId={{ tag.id }}>Delete</button>
+            </div>
+            <div class="tag-card">
+                <img class="tag-img" src={{ url_for('api_bp.getImage', img_id=tag.icon) }}>
+                <div class="project-content">
+                    <div class="project-text">
+                        <h2>{{ tag.name }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <h2>No Tags Found</h2>
+    {% endif %}
+    <div class="nav-distance"></div>
+</div> 
+{% endblock %}
