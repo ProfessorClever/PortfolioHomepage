@@ -1,0 +1,41 @@
+Before you can use this, you need to create the config.py file to the top folder.
+
+config.py:
+    STATIC_FOLDER = 'static'
+    DEBUG = True
+    SECRET_KEY = '' #Add a secret key string here
+    FLASK_ADMIN_SWATCH = '' #Add a admin swatch string here
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///database.sqlite'
+    SECURITY_PASSWORD_SALT = '' #Add a salt number here
+    SECURITY_REGISTERABLE = True
+    SECURITY_SEND_REGISTER_EMAIL = False
+    NAME = '' #Add your name
+    EMAIL = '' #Add your email
+    PHONE_NUMBER = '' #Add your phone number
+    DEFAULT_IMAGE_PATH = 'website/static/ProjectDefaultPic.svg'
+
+Then run in the command prompt:
+
+    python -m venv venv
+
+to create a virtual inviroment.
+if this doesn't work, you need to install python on your pc first.
+
+then run:
+
+    . venv/bin/activate    # Linux MacOS
+    venv\Scripts\activate  # Windows
+
+now your virtual inviroment is set up.
+
+Now you need to install the requirements by running:
+
+    pip install -r requirements.txt
+
+then you need to create the database by running:
+
+    python create_db.py
+
+now you can run the website:
+
+    python run.py
